@@ -1,0 +1,13 @@
+.container-fluid h1 {
+  text-align: center;
+}
+.contianer-fluid {
+  justify-content: center;
+}
+.fadeOut {
+  opacity: 0;
+  transition: 0.5s;
+}
+.invisivel{
+  display: none;
+}

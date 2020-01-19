@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt_BR" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>O Mundo Mágico do Javascript</title>
+    <link rel="stylesheet" href="Bootstrap\css\bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css\index.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h1 id="titulo">O Mundo Mágico</h1>
+            <button type="button" class="btn btn-primary" onclick="magica()">Mágica</button>
+            <button type="button" class="btn btn-danger" onclick="Pararmagica()">Parar</button>
+    </div>
+    <div class="container">
+      <label>
+        Filtro:
+        <input class="form-control" type="text" id="filtrar-tabela" placeholder="Digite o cliente">
+      </label>
+      <table class="table table-striped table-bordered" id="tabela-cliente">
+        <thead>
+          <tr class="">
+            <th class="info-nome">Name</th>
+            <th class="info-idade">Idade</th>
+            <th class="info-salario">Salário</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="cliente">
+            <td class="info-nome">Lucas</td>
+            <td class="info-idade">19</td>
+            <td class="info-salario">500,00</td>
+          </tr>
+          <tr class="cliente">
+            <td class="info-nome">João</td>
+            <td class="info-idade">21</td>
+            <td class="info-salario">600,00</td>
+          </tr>
+          <tr class="cliente">
+            <td class="info-nome">Gabriel</td>
+            <td class="info-idade">24</td>
+            <td class="info-salario">900,00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="container">
+      <form class="form-group" id="form-list">
+        <label>
+          Nome:
+          <input type="name" class="form-control" placeholder="Nome" id="Nome-Form" name="nome">
+        </label>
+        <label>
+          Idade:
+          <input type="number" class="form-control" placeholder="Idade" id="Idade-Form" name="idade">
+        </label>
+        <label>
+          Salário:
+          <input type="number" class="form-control" placeholder="Salário" id="Salario-Form" name="salario">
+        </label>
+        <a id="adicionar-cliente" class="btn btn-primary">Adicionar</a>
+      </form>
+    </div>
+    <div class="container">
+      <table class="table table-striped">
+        <tr>
+          <th>Valor</th>
+          <th>Segundo Valor</th>
+          <th></th>
+          <th>Resultado</th>
+        </tr>
+        <tr>
+          <td><input class="form-control" type="text" id="valor1" placeholder="Primeiro Valor"></td>
+          <td><input class="form-control" type="text" id="valor2" placeholder="Segundo Valor"></td>
+          <td><button class="btn btn-primary" onclick="valores() ">Somar</button></td>
+          <td><strong><p id="Resultado">0</p></strong></td>
+        </tr>
+      </table>
+    </div>
+    <div class="container">
+      <table class="table table-striped">
+        <tr>
+          <th>Primeiro Nota</th>
+          <th>Segunda Nota</th>
+          <th></th>
+          <th>Média</th>
+        </tr>
+        <tr>
+          <td><input class="form-control" type="text" id="nota1" placeholder="Primeira Nota"></th>
+          <td><input type="text" class="form-control" id="nota2" placeholder="Segunda Nota"></td>
+          <td><button class="btn btn-primary" onclick=" media()" >Fazer  Média</td>
+          <td><strong><p id="Media">0,00</p></strong></td>
+        </tr>
+      </table>
+
+      <div class="container">
+          <table class="table table-striped">
+              <tr>
+                <th>Primeiro Valor</th>
+                <th>Segundo Valor</th>
+                <th>Oque Fazer</th>
+                <th>Resultado</th>
+                <th>Limpar</th>
+              </tr>
+              <tr>
+                <td><input type="text" id="valor3" class="form-control" placeholder="Primeiro Valor"></td>
+                <td><input type="text" id="valor4" class="form-control" placeholder="Segundo Valor"></td>
+                <td>
+                  <select class="form-control" id="test" onchange="listOp()">
+                    <option selected disabled></option>
+                    <option value="Soma">Soma</option>
+                    <option value="Média">Média</option>
+                    <option value="Subtrair">Subtrair</option>
+                    <option value="Dividir">Dividir</option>
+                    <option value="Multiplicar">Multiplicar</option>
+                  </select>
+                </td>
+                <td><strong><p id="ResultadoOp">0</p></strong></td>
+                <td><button class="btn btn-primary" type="button" id="resetbotao" onclick="reset()">Resetar</td>
+              </tr>
+              <datalist id="Operacoes">
+                <option value="Soma"></option>
+                <option value="Média"></option>
+                <option value="Subtrair"></option>
+                <option value="Dividir"></option>
+                <option value="Multiplicar"></option>
+              </datalist>
+          </table>
+      </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js\filtro.js" charset="utf-8"></script>
+    <script src="js\deleta.js" charset="utf-8"></script>
+    <script src="js\cria.js" charset="utf-8"></script>
+    <script src="js\reset.js" charset="utf-8"></script>
+    <script src="js\select.js" charset="utf-8"></script>
+    <script src="js/subtrair.js" charset="utf-8"></script>
+    <script src="js\media.js" charset="utf-8"></script>
+    <script src="js\soma.js" charset="utf-8"></script>
+    <script src="Js\index.js"></script>
+  </body>
+</html>
